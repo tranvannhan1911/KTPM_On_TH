@@ -1,0 +1,11 @@
+package ktpm.thith.user_service.service;
+
+import java.util.List;
+
+import ktpm.thith.user_service.entity.User;
+
+public interface UserService {
+	User createProduct(User product);
+	public List<User> listProduct();
+	public User getProduct(String id);
+}

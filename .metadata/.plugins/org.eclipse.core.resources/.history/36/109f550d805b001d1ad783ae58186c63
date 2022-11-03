@@ -1,0 +1,35 @@
+package ktpm.thith.user_service.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ktpm.thith.user_service.entity.User;
+import ktpm.thith.user_service.repository.UserRepository;
+
+
+@Service
+public class ProductServiceImpl implements UserService{
+
+    @Autowired
+    private UserRepository productRepository;
+    
+	@Override
+	public User createProduct(User product) {
+		return productRepository.save(product);
+	}
+
+	@Override
+	public List<User> listProduct() {
+		List<User> products = (List<User>) productRepository.findAll(); 
+		return products;
+	}
+
+	@Override
+	public User getProduct(String id) {
+		User product = productRepository.findById(id).orElse(null); 
+		return product;
+	}
+
+}
