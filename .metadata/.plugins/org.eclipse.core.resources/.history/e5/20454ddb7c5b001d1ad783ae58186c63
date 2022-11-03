@@ -1,8 +1,0 @@
-package ktpm.thigiuaky.bai1.service;
-
-import ktpm.thigiuaky.bai1.entity.Product;
-
-public interface ProductService {
-	Product createProduct(Product product);
-	Product getProduct();
-}

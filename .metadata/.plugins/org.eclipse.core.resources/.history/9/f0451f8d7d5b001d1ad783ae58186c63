@@ -1,8 +1,0 @@
-package ktpm.thith.product_service.service;
-
-import ktpm.thith.product_service.entity.Product;
-
-public interface ProductService {
-	Product createProduct(Product product);
-	Product getProduct();
-}
