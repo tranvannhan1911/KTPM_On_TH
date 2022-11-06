@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class Controller {
 
-    @Value("${server.port}")
+    @Value("${welcome.message}")
     private String message;
 
     @GetMapping("/message")
