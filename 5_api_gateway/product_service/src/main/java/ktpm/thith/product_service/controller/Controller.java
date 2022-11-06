@@ -27,7 +27,7 @@ public class Controller {
     @Autowired
     private DiscoveryClient discoveryClient; // just to list all services
 	
-	@GetMapping("/a")
+	@GetMapping("")
 	public List<Product> listProduct() {
 		List<Product> products = productService.listProduct();
 		return products;
