@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: PRODUCT
+          uri: lb://PRODUCT
+          predicates:
+            - Path=/product/**
+          filters:
+            - RewritePath=/product/(?<segment>/?.*),/api/$\{segment}
+            - name: CircuitBreaker
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
+        - id: USER
+          uri: lb://USER
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<segment>/?.*),/api/$\{segment}
+            - name: CircuitBreaker
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
